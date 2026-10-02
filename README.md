@@ -19,10 +19,23 @@ A simple web application to calculate **Pearson's sample correlation coefficient
 
 ## Formula
 
-\[
-r=\frac{n\sum xy-(\sum x)(\sum y)}
-{\sqrt{[n\sum x^2-(\sum x)^2][n\sum y^2-(\sum y)^2]}}
-\]
+Pearson's sample correlation coefficient is calculated using the following formula:
+
+$$
+r = \frac{n\sum xy - (\sum x)(\sum y)}
+{\sqrt{\left[n\sum x^2 - (\sum x)^2\right]
+\left[n\sum y^2 - (\sum y)^2\right]}}
+$$
+
+**Where:**
+
+- $r$ = Sample correlation coefficient
+- $n$ = Number of observations
+- $\sum xy$ = Sum of the products of X and Y
+- $\sum x$ = Sum of all X values
+- $\sum y$ = Sum of all Y values
+- $\sum x^2$ = Sum of squared X values
+- $\sum y^2$ = Sum of squared Y values
 
 ## How to Run
 
