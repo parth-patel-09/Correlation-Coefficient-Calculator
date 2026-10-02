@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlation Coefficient Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Correlation Calculator</h1>
+            <p>Calculate Pearson's sample correlation coefficient (r)</p>
+        </header>
+
+        <section class="card">
+            <h2>Enter Your Data</h2>
+
+            <form id="correlationForm">
+                <label for="count">Number of observations (n)</label>
+                <input
+                    type="number"
+                    id="count"
+                    min="2"
+                    step="1"
+                    placeholder="e.g. 5"
+                    required
+                >
+
+                <div class="input-grid">
+                    <div>
+                        <label for="xValues">X values</label>
+                        <textarea
+                            id="xValues"
+                            placeholder="e.g. 1.5, 2.5, 3.5, 4.5, 5.5"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label for="yValues">Y values</label>
+                        <textarea
+                            id="yValues"
+                            placeholder="e.g. 2.2, 3.8, 4.1, 5.7, 6.3"
+                            required
+                        ></textarea>
+                    </div>
+                </div>
+
+                <p class="hint">
+                    Separate values with spaces, commas, or new lines.
+                </p>
+
+                <div id="error" class="error" role="alert"></div>
+
+                <div class="buttons">
+                    <button type="submit" class="primary">
+                        Calculate r
+                    </button>
+                    <button type="reset" class="secondary">
+                        Clear
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results" class="card" hidden>
+            <h2>Calculation Results</h2>
+
+            <div class="result-main">
+                <span>Correlation coefficient (r)</span>
+                <strong id="rValue">—</strong>
+                <p id="interpretation"></p>
+            </div>
+
+            <h3>Calculated Sums</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Σxy</td>
+                            <td id="sumXY"></td>
+                        </tr>
+                        <tr>
+                            <td>Σx</td>
+                            <td id="sumX"></td>
+                        </tr>
+                        <tr>
+                            <td>Σy</td>
+                            <td id="sumY"></td>
+                        </tr>
+                        <tr>
+                            <td>Σx²</td>
+                            <td id="sumX2"></td>
+                        </tr>
+                        <tr>
+                            <td>Σy²</td>
+                            <td id="sumY2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Formula Used</h3>
+
+            <div class="formula">
+                <p>
+                    r =
+                    <span class="fraction">
+                        <span class="numerator">
+                            nΣxy − (Σx)(Σy)
+                        </span>
+                        <span class="denominator">
+                            √([nΣx² − (Σx)²][nΣy² − (Σy)²])
+                        </span>
+                    </span>
+                </p>
+            </div>
+
+            <div class="substitution">
+                <h3>Substitution</h3>
+                <p id="substitution"></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Correlation Calculator | Statistics Project</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
